@@ -1,0 +1,28 @@
+Namespace EnrollmentApplication.Models
+
+End Namespace
+Public Class Course
+{
+
+[Display(Name = "Course ID")]
+Public virtual int Id { Get; Set; }
+
+
+[Display(Name = "Course Title")]
+[Required(ErrorMessage = "Enter Title for course")]
+[MaxLength(50, ErrorMessage = "Allowable max is 150")]
+Public virtual String Title { Get; Set; }
+
+
+[Display(Name = "Description")]
+Public virtual String Description { Get; Set; }
+
+
+[Display(Name = "Number of Credits")]
+[Required(ErrorMessage = "Enter credits for course")]
+[RegularExpression("^[1-4]{1}$", ErrorMessage = "Enter value either 1,2 or 3,4")]
+Public virtual String Credits { Get; Set; }
+
+}
+}
+End Class
