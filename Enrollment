@@ -1,0 +1,36 @@
+Public Class Enrollment
+{
+Public virtual int Id { Get; Set; }
+
+[Display(Name = "Student ID")]
+Public virtual int StudentId { Get; Set; }
+Public Student Student { Get; Set; }
+
+[Display(Name = "Course ID")]
+Public virtual int CourseId { Get; Set; }
+
+Public Course Course { Get; Set; }
+
+[Display(Name = "Grade")]
+[RegularExpression("^[A-F]{1}$", ErrorMessage = "Enter value A , B, C, D, E, F")]
+Public virtual String Grade { Get; Set; }
+Public bool IsActive { Get; Set; }
+
+[Display(Name = "Assigned Campus")]
+[Required(ErrorMessage = "Enter value for campus")]
+Public virtual String AssignedCampus { Get; Set; }
+
+
+[Display(Name = "Enrolled in Semester")]
+[Required(ErrorMessage = "Enter enrollment semester")]
+Public virtual String EnrollmentSemester { Get; Set; }
+
+
+[Display(Name = "Enrollment Year")]  
+[Required(ErrorMessage = "Enter value for Enrollment Year ")]
+[Range(2018,2020, ErrorMessage = "Enter value greater than 2018")]
+Public virtual int EnrollmentYear { Get; Set; }
+Public virtual String Notes { Get; Set; }
+}
+}
+End Class
